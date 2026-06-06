@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Flippn'Click — Aluminium Deck &amp; Tile Framing System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue:#066aab;--blue-d:#044f82;--blue-l:#1a85cc;
+  --dark:#111;--charcoal:#1e1e1e;--mid:#555;
+  --light:#f5f5f5;--white:#fff;
+  --red:#cc2222;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:#222;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 12px rgba(0,0,0,.06);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--blue);letter-spacing:.04em;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-link{font-size:14px;font-weight:500;color:#444;text-decoration:none;padding:6px 14px;transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--blue);}
+.nav-cta{background:var(--blue);color:white;padding:9px 22px;font-size:13px;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background .2s;border-radius:2px;}
+.nav-cta:hover{background:var(--blue-l);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-link{display:none;}.nav-cta{padding:8px 16px;font-size:12px;}}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;padding:100px 24px 60px;}
+.hero-bg{position:absolute;inset:0;background:url('https://flippnclick.co.nz/wp-content/uploads/2024/10/Deck-100.jpg') center/cover no-repeat;filter:brightness(.25);}
+.hero-logo{position:relative;width:200px;margin:0 auto 28px;filter:drop-shadow(0 2px 20px rgba(0,0,0,.5));}
+.hero-title{position:relative;font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,100px);font-weight:900;line-height:.95;color:white;margin-bottom:20px;letter-spacing:-.01em;}
+.hero-sub{position:relative;font-size:18px;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:40px;max-width:500px;}
+.hero-btns{position:relative;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:13px 30px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border-radius:2px;}
+.btn-primary{background:var(--blue);color:white;}
+.btn-primary:hover{background:var(--blue-l);}
+.btn-outline{border:2px solid rgba(255,255,255,.4);color:white;}
+.btn-outline:hover{border-color:white;background:rgba(255,255,255,.1);}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;}
+.hero-scroll span{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrollpulse 1.8s ease infinite;}
+@keyframes scrollpulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+
+/* TICKER */
+.ticker{background:var(--blue);padding:12px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-flex;animation:ticker 20s linear infinite;}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:white;padding:0 32px;display:flex;align-items:center;gap:32px;}
+.ticker-item::after{content:'◆';font-size:7px;opacity:.5;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* SECTION */
+.section{padding:90px 48px;}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,5vw,60px);font-weight:700;line-height:1;color:#111;margin-bottom:16px;}
+.section-sub{font-size:16px;font-weight:300;color:var(--mid);line-height:1.7;max-width:540px;}
+@media(max-width:768px){.section{padding:60px 20px;}}
+
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:56px;}
+.how-video{position:relative;padding-bottom:56.25%;height:0;border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);}
+.how-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+.how-text p{font-size:16px;font-weight:300;line-height:1.8;color:#444;margin-bottom:24px;}
+.partner-logos{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:32px;}
+.partner-logos img{height:32px;object-fit:contain;filter:grayscale(1);opacity:.6;transition:all .2s;}
+.partner-logos img:hover{filter:none;opacity:1;}
+.cta-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:14px;font-weight:600;text-decoration:none;margin-top:24px;letter-spacing:.04em;}
+.cta-link:hover{color:var(--blue-l);}
+@media(max-width:900px){.how-grid{grid-template-columns:1fr;}}
+
+/* SYSTEM CARDS */
+.system-bg{background:var(--light);}
+.system-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:#ddd;}
+.sys-card{background:white;padding:40px 32px;}
+.sys-icon{font-size:32px;margin-bottom:16px;}
+.sys-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:#111;margin-bottom:10px;}
+.sys-desc{font-size:14px;font-weight:300;color:#666;line-height:1.7;}
+@media(max-width:700px){.system-cards{grid-template-columns:1fr;}}
+
+/* CTA BANNER */
+.cta-banner{background:var(--dark);padding:80px 48px;text-align:center;}
+.cta-banner h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:700;color:white;margin-bottom:12px;}
+.cta-banner p{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);margin-bottom:32px;}
+@media(max-width:768px){.cta-banner{padding:60px 20px;}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px;}
+.faq-item h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--blue);margin-bottom:10px;line-height:1.2;}
+.faq-item p{font-size:14px;font-weight:300;color:#555;line-height:1.7;}
+@media(max-width:900px){.faq-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.faq-grid{grid-template-columns:1fr;}}
+
+/* TESTIMONIAL */
+.testimonial-bg{background:var(--light);padding:80px 48px;}
+.testimonial-inner{max-width:760px;margin:0 auto;text-align:center;}
+.testimonial-text{font-size:20px;font-weight:300;line-height:1.7;color:#333;margin-bottom:28px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;justify-content:center;gap:16px;}
+.testimonial-author img{width:48px;height:48px;border-radius:50%;object-fit:cover;}
+.testimonial-name{font-size:14px;font-weight:600;color:#222;}
+.testimonial-role{font-size:12px;color:#888;}
+.stars{color:#f5a623;font-size:16px;margin-top:8px;}
+@media(max-width:768px){.testimonial-bg{padding:60px 20px;}}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.footer-logo{display:flex;align-items:center;gap:10px;}
+.footer-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,.5);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;gap:20px;}
+.footer-link{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-link:hover{color:rgba(255,255,255,.7);}
+@media(max-width:600px){footer{flex-direction:column;text-align:center;padding:24px 20px;}.footer-links{justify-content:center;}}
+
+/* FADE IN */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/FlippnClick-Logo-100.jpg" alt="FlippnClick" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="nav-logo-text" style="display:none">Flippn'Click</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" href="index.html">Home</a>
+    <a class="nav-link" href="products.html">Products</a>
+    <a class="nav-link" href="projects.html">Projects</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Enquire Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-logo" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/FlippnClick-White-with-Red-Dots-8.png" alt="FlippnClick">
+  <h1 class="hero-title">Welcome to<br>Flippn'Click</h1>
+  <p class="hero-sub">The most innovative Aluminium Deck &amp; Tile Framing System</p>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="products.html">Our Products</a>
+    <a class="btn btn-outline" href="contact.html">Enquire Now</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Aluminium Framing</span>
+    <span class="ticker-item">Self Levelling Jacks</span>
+    <span class="ticker-item">Tile &amp; Timber Decking</span>
+    <span class="ticker-item">Low Profile System</span>
+    <span class="ticker-item">Easy Installation</span>
+    <span class="ticker-item">Durable &amp; Versatile</span>
+    <span class="ticker-item">Aluminium Framing</span>
+    <span class="ticker-item">Self Levelling Jacks</span>
+    <span class="ticker-item">Tile &amp; Timber Decking</span>
+    <span class="ticker-item">Low Profile System</span>
+    <span class="ticker-item">Easy Installation</span>
+    <span class="ticker-item">Durable &amp; Versatile</span>
+  </div>
+</div>
+
+<section class="section" id="how">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title fade-up">How Flippn'Click Works</h2>
+  <div class="how-grid">
+    <div class="fade-up">
+      <div class="how-video">
+        <iframe src="https://www.youtube.com/embed/NmCtPm3Jlbc" title="FlippnClick video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="how-text fade-up">
+      <p>Flippn'Click is an innovative aluminium framing system which can be used with decking and tiles. The clever design lets you change from tiles to decking without changing your framing.</p>
+      <p>Just flip the joist and insert the fasteners for tiles or a nail free timber solution.</p>
+      <div class="partner-logos">
+        <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/NurajackLogo-2.png" alt="Nurajack">
+        <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/FlippnClip-Full-Colour-8.png" alt="FlippnClick">
+        <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/ShadowDeck-Black-8.png" alt="ShadowDeck">
+      </div>
+      <a class="btn btn-primary" href="contact.html" style="margin-top:32px;">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section system-bg">
+  <div class="section-label">The System</div>
+  <h2 class="section-title fade-up">Check Out Our Products</h2>
+  <div class="system-cards">
+    <div class="sys-card fade-up">
+      <div class="sys-icon">🔩</div>
+      <div class="sys-name">Self Levelling Jacks</div>
+      <div class="sys-desc">We only use Nurajack self levelling adjustable decking piles to allow the deck to be adjusted to the level of the interior living space.</div>
+    </div>
+    <div class="sys-card fade-up">
+      <div class="sys-icon">⚙️</div>
+      <div class="sys-name">Aluminium Framing</div>
+      <div class="sys-desc">Our unique patented FlippnClick Aluminium Framing clicks into the Nurajack pile, ideal for low profile tile or timber decks.</div>
+    </div>
+    <div class="sys-card fade-up">
+      <div class="sys-icon">🏗️</div>
+      <div class="sys-name">Decking Substrate</div>
+      <div class="sys-desc">Finish your deck with a tiling and/or timber decking substrate using our FlippnClick Aluminium framing &amp; fasteners.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <a class="btn btn-primary" href="products.html">Our Products →</a>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item fade-up">
+      <h3>What are the benefits over traditional materials?</h3>
+      <p>Aluminium is lightweight, durable, and resistant to rust, rot, and insects, making it a long-lasting and low-maintenance option for decking framing.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Is it easy to install?</h3>
+      <p>Absolutely! The system is designed for straightforward installation, often requiring fewer tools and less labour compared to traditional wood framing.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Can it support heavy loads?</h3>
+      <p>Yes — the system is engineered to support heavy loads and is suitable for various applications, including residential and commercial projects.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Is it environmentally friendly?</h3>
+      <p>Yes, aluminium is recyclable and produces less waste during production compared to some traditional materials.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Can it be used in low-profile scenarios?</h3>
+      <p>The system is ideal for low-profile applications, providing a sleek, streamlined appearance while maximising headroom.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h3>Can I use different decking materials?</h3>
+      <p>The system is compatible with tiles and traditional wood, giving you flexibility in your design choices.</p>
+    </div>
+  </div>
+</section>
+
+<div class="testimonial-bg">
+  <div class="testimonial-inner fade-up">
+    <p class="testimonial-text">"I highly recommend the Flippn'Click Aluminum Deck &amp; Tile Framing System for its exceptional durability, ease of installation, and versatility. Compatible with a range of decking materials, this system is ideal for both residential and commercial applications."</p>
+    <div class="testimonial-author">
+      <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/Lewis-Updated.png.webp" alt="Lewis">
+      <div>
+        <div class="testimonial-name">Lewis from Nurajack</div>
+        <div class="testimonial-role">November 2024</div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-banner fade-up">
+  <h2>Want to find out more about Flippn'Click?</h2>
+  <p>Click the button below and we will get back to you asap.</p>
+  <a class="btn btn-primary" href="contact.html">Email Us →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span class="footer-logo-text">Flippn'Click</span>
+  </div>
+  <div class="footer-links">
+    <a class="footer-link" href="index.html">Home</a>
+    <a class="footer-link" href="products.html">Products</a>
+    <a class="footer-link" href="projects.html">Projects</a>
+    <a class="footer-link" href="contact.html">Contact</a>
+  </div>
+  <span class="footer-copy">© 2024 Robust Limited. All rights reserved. Powered by Strand Media Ltd.</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

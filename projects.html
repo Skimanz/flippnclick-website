@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projects — Flippn'Click Aluminium Deck &amp; Tile Framing System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#066aab;--blue-d:#044f82;--blue-l:#1a85cc;--dark:#111;--charcoal:#1e1e1e;--mid:#555;--light:#f5f5f5;--white:#fff;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:#222;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 12px rgba(0,0,0,.06);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--blue);}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-link{font-size:14px;font-weight:500;color:#444;text-decoration:none;padding:6px 14px;transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--blue);}
+.nav-cta{background:var(--blue);color:white;padding:9px 22px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s;border-radius:2px;}
+.nav-cta:hover{background:var(--blue-l);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-link{display:none;}.nav-cta{padding:8px 16px;font-size:12px;}}
+
+/* PAGE HERO */
+.page-hero{min-height:60vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5vw 6vw;overflow:hidden;margin-top:68px;background:var(--dark);}
+.page-hero h1{position:relative;font-family:'Barlow Condensed',sans-serif;font-size:clamp(72px,12vw,160px);font-weight:900;font-style:italic;line-height:.85;color:var(--blue);letter-spacing:-2px;}
+
+/* GALLERY SECTIONS */
+.gallery-section{padding:0 48px 80px;background:var(--dark);}
+.gallery-section:last-of-type{padding-bottom:0;}
+.gallery-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:white;margin-bottom:24px;padding-top:60px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.gallery-img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;transition:transform .4s ease,filter .4s ease;cursor:pointer;}
+.gallery-img:hover{filter:brightness(1.1);transform:scale(1.02);}
+@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.gallery-section{padding:0 20px 60px;}}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:2px;}
+.lightbox-close{position:absolute;top:20px;right:24px;font-size:32px;color:white;cursor:pointer;opacity:.7;transition:opacity .2s;background:none;border:none;}
+.lightbox-close:hover{opacity:1;}
+
+/* CTA */
+.cta-section{background:var(--blue);padding:60px 48px;text-align:center;}
+.cta-section h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:white;margin-bottom:12px;}
+.cta-section p{font-size:16px;font-weight:300;color:rgba(255,255,255,.7);margin-bottom:28px;}
+.btn{padding:13px 30px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border-radius:2px;}
+.btn-white{background:white;color:var(--blue);}
+.btn-white:hover{background:#f0f0f0;}
+@media(max-width:768px){.cta-section{padding:60px 20px;}}
+
+footer{background:var(--charcoal);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.footer-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,.5);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;gap:20px;}
+.footer-link{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-link:hover{color:rgba(255,255,255,.7);}
+@media(max-width:600px){footer{flex-direction:column;text-align:center;padding:24px 20px;}.footer-links{justify-content:center;}}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/FlippnClick-Logo-100.jpg" alt="FlippnClick" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="nav-logo-text" style="display:none">Flippn'Click</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="products.html">Products</a>
+    <a class="nav-link active" href="projects.html">Projects</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Enquire Now</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Our<br>Projects!</h1>
+</div>
+
+<div class="gallery-section">
+  <h2 class="gallery-title fade-up">The Metropolis, Auckland</h2>
+  <div class="gallery-grid">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_8671-1024x1024.webp" alt="The Metropolis Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_8673-1024x1024.webp" alt="The Metropolis Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_8681-1024x1024.webp" alt="The Metropolis Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_8654-1024x1024.webp" alt="The Metropolis Auckland" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<div class="gallery-section">
+  <h2 class="gallery-title fade-up">Glover Road, St Johns, Auckland</h2>
+  <div class="gallery-grid">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2088-1024x704.jpg" alt="Glover Road Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2092-1024x668.jpg" alt="Glover Road Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2091-1024x601.jpg" alt="Glover Road Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2090-1024x684.jpg" alt="Glover Road Auckland" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<div class="gallery-section" style="padding-bottom:80px;">
+  <h2 class="gallery-title fade-up">Beaumont Quarter, Freemans Bay, Auckland</h2>
+  <div class="gallery-grid">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2088-1024x704.jpg" alt="Beaumont Quarter Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2089.jpg" alt="Beaumont Quarter Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/12/IMG_3535.jpg" alt="Beaumont Quarter Auckland" onclick="openLightbox(this.src)">
+    <img class="gallery-img fade-up" src="https://flippnclick.co.nz/wp-content/uploads/2024/12/images-4.jpeg" alt="Beaumont Quarter Auckland" onclick="openLightbox(this.src)">
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<div class="cta-section fade-up">
+  <h2>Want to see your project here?</h2>
+  <p>Get in touch to find out how Flippn'Click can transform your next decking project.</p>
+  <a class="btn btn-white" href="contact.html">Email Us →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span class="footer-logo-text">Flippn'Click</span>
+  </div>
+  <div class="footer-links">
+    <a class="footer-link" href="index.html">Home</a>
+    <a class="footer-link" href="products.html">Products</a>
+    <a class="footer-link" href="projects.html">Projects</a>
+    <a class="footer-link" href="contact.html">Contact</a>
+  </div>
+  <span class="footer-copy">© 2024 Robust Limited. All rights reserved. Powered by Strand Media Ltd.</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

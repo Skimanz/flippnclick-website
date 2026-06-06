@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — Flippn'Click Aluminium Deck &amp; Tile Framing System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue:#066aab;--blue-d:#044f82;--blue-l:#1a85cc;--dark:#111;--charcoal:#1e1e1e;--mid:#555;--light:#f5f5f5;--white:#fff;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:#222;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 12px rgba(0,0,0,.06);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--blue);}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-link{font-size:14px;font-weight:500;color:#444;text-decoration:none;padding:6px 14px;transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--blue);}
+.nav-cta{background:var(--blue);color:white;padding:9px 22px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s;border-radius:2px;}
+.nav-cta:hover{background:var(--blue-l);}
+@media(max-width:768px){nav{padding:0 16px;}.nav-link{display:none;}.nav-cta{padding:8px 16px;font-size:12px;}}
+
+/* CONTACT PAGE */
+.contact-page{min-height:calc(100vh - 68px);margin-top:68px;display:grid;grid-template-columns:1fr 1fr;}
+.contact-left{background:var(--dark);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;}
+.contact-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+.contact-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,6vw,80px);font-weight:700;line-height:.95;color:white;margin-bottom:24px;}
+.contact-body{font-size:16px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:48px;max-width:380px;}
+.contact-img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:900px){
+  .contact-page{grid-template-columns:1fr;}
+  .contact-left{padding:100px 20px 60px;}
+  .contact-img-wrap{display:none;}
+}
+
+/* FORM SECTION */
+.form-section{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:900px){.form-section{padding:40px 20px 60px;}}
+
+.form-label{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:7px;margin-top:20px;}
+.form-label:first-child{margin-top:0;}
+.form-input,.form-textarea,.form-select{width:100%;background:#f8f8f8;border:1px solid #e0e0e0;color:#222;padding:13px 15px;font-size:14px;font-family:'Barlow',sans-serif;font-weight:300;outline:none;transition:border .2s;border-radius:2px;}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--blue);background:#fff;}
+.form-textarea{resize:vertical;min-height:140px;}
+.form-submit{margin-top:24px;width:100%;background:var(--blue);color:white;border:none;padding:16px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s;font-family:'Barlow',sans-serif;border-radius:2px;}
+.form-submit:hover{background:var(--blue-l);}
+.name-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:500px){.name-row{grid-template-columns:1fr;}}
+
+.success-msg{display:none;background:#e8f5e9;border:1px solid #a5d6a7;color:#2e7d32;padding:16px;border-radius:2px;margin-top:16px;font-size:14px;}
+
+footer{background:var(--charcoal);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.footer-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,.5);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-links{display:flex;gap:20px;}
+.footer-link{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-link:hover{color:rgba(255,255,255,.7);}
+@media(max-width:600px){footer{flex-direction:column;text-align:center;padding:24px 20px;}.footer-links{justify-content:center;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="https://flippnclick.co.nz/wp-content/uploads/2024/10/FlippnClick-Logo-100.jpg" alt="FlippnClick" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="nav-logo-text" style="display:none">Flippn'Click</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="products.html">Products</a>
+    <a class="nav-link" href="projects.html">Projects</a>
+    <a class="nav-link active" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Enquire Now</a>
+  </div>
+</nav>
+
+<div class="contact-page">
+  <div class="contact-left">
+    <div class="contact-label">Contact Us</div>
+    <h1 class="contact-title">Get in<br>Touch</h1>
+    <p class="contact-body">Have any questions or need assistance? We're here to help! Fill out the form and we'll get back to you as soon as possible.</p>
+  </div>
+  <div class="form-section">
+    <form action="https://formspree.io/f/mjgzqyje" method="POST">
+      <div class="name-row">
+        <div>
+          <label class="form-label">First Name *</label>
+          <input class="form-input" type="text" name="first_name" required placeholder="John">
+        </div>
+        <div>
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" name="last_name" placeholder="Smith">
+        </div>
+      </div>
+      <label class="form-label">Email Address *</label>
+      <input class="form-input" type="email" name="email" required placeholder="john@company.co.nz">
+      <label class="form-label">Comment or Message</label>
+      <textarea class="form-textarea" name="message" placeholder="Tell us about your project..."></textarea>
+      <input type="hidden" name="_subject" value="FlippnClick Website Enquiry">
+      <button class="form-submit" type="submit">Submit Enquiry →</button>
+      <div class="success-msg" id="success">Thanks! We'll be in touch shortly.</div>
+    </form>
+  </div>
+  <div class="contact-img-wrap">
+    <img class="contact-img" src="https://flippnclick.co.nz/wp-content/uploads/2024/10/IMG_2088-1024x704.jpg" alt="FlippnClick Project">
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span class="footer-logo-text">Flippn'Click</span>
+  </div>
+  <div class="footer-links">
+    <a class="footer-link" href="index.html">Home</a>
+    <a class="footer-link" href="products.html">Products</a>
+    <a class="footer-link" href="projects.html">Projects</a>
+    <a class="footer-link" href="contact.html">Contact</a>
+  </div>
+  <span class="footer-copy">© 2024 Robust Limited. All rights reserved. Powered by Strand Media Ltd.</span>
+</footer>
+
+</body>
+</html>
